@@ -124,17 +124,14 @@ class UserController extends Controller
         return view('user/manajer', $data);
     }
 
-    public function adminMenu(Request $request)
+    public function adminMenu()
     {
         $data = [
             'title' => "Data Menu",
             'page'  => "menu",
-            'menu' => Menu::All(),
-            'menu' => Kategori::All()
+            'menu' => Menu::join('kategori', 'menu.id_kategori', '=', 'kategori.id_kategori')->get(),
+            'kategori' => Kategori::All()
         ];
-
-        $data['menu'] = Menu::All();
-        $data['kategori'] = Kategori::All();
         return view('admin/menu', $data);
     }
 
