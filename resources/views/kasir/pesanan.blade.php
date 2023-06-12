@@ -26,12 +26,13 @@
             @foreach($menu as $mn)
             <button id="{{$mn->id_menu}}" data-idmenu="{{$mn->id_menu}}" data-namamenu='{{$mn->nama_menu}}' data-hargamenu="Rp. {{$mn->harga}}" data-gambar = '{{ asset('storage/'. $mn->gambar) }}' data-hg={{$mn->harga}}  onclick="cobu(this);" class="btn w-80 h-40 p-4 rounded-xl flex gap-6 items-start">
                 <div class="rounded-xl h-full w-1/2 bg-cover bg-center bg-secondary" style="background-image: url('{{ asset('storage/'. $mn->gambar) }}')"></div>
-                <div class="h-full flex flex-col items-start justify-between">
+                <div class="h-full flex flex-col items-start justify-between py-2">
                     <div>
                         <h1 class="font-semibold text-caption text-left">{{$mn->nama_menu}}</h1>
                     </div>
                     <div>
-                        <p class="font-medium text-lg text-primary">Rp. {{$mn->harga}}</p>
+                        <p class="font-medium text-lg text-primary text-left">Rp. {{$mn->harga}}</p>
+                        <p class=" text-caption text-left opacity-60 text-base">Stok: {{$mn->stok}}</p>
                     </div>
                 </div>
             </button>
