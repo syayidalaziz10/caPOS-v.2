@@ -47,7 +47,7 @@
                     MENU YANG TERJUAL
                 </div>
                 {{-- div item menu --}}
-                <div class="h-80 overflow-auto space-y-2 flex flex-col mb-10">
+                <div class="h-80 overflow-auto space-y-2 flex flex-col mb-10 pr-4">
                     @if($dataDetail != [])
                     @foreach($dataDetail as $detail)
                     <div class="flex w-full h-28 bg-primary rounded-xl p-4 justify-between">
