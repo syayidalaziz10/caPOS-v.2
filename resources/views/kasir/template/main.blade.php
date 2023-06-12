@@ -48,8 +48,7 @@
 
 
     <script>
-
-        let valM    = document.getElementById('valMenu');
+                let valM    = document.getElementById('valMenu');
         let valJ    = document.getElementById('valJml');
         let lm      = document.getElementById('listmenu');  
         var ttlObj  = document.getElementById('totalhg');  
@@ -96,10 +95,9 @@
                 lstNm.push(nama);
                 lsthg.push(hg);
 
-
                 lstGb.push(gambar);
                 console.log(lsthg);
-                lstm.push(`                <div class="flex gap-4 w-full p-4 h-28 bg-primary rounded-lg ${ss}">
+                lstm.push(`<div class="flex gap-4 w-full p-4 h-28 bg-primary rounded-lg ${ss}">
                     <div class="h-full w-full flex justify-between items-center">
                         <div class="w-full h-full flex items-center justify-start gap-3">
                             <div>
@@ -109,23 +107,25 @@
                             </div>
                             <div>
                                 <h1 class="font-semibold text-base text-fill text-left"> ${nama}</h1>
-                                <p class="font-medium text-base text-fill">Rp. >${hg}</p>
+                                <p class="font-medium text-base text-fill">Rp. ${hg}</p>
                             </div>
                         </div>
                         <div>
                             <div class="flex items-center gap-3">
                                 <button data-idm=${ss} data-hg=${hg} onclick='krval(this);' class="submit bg-fill text-primary rounded-lg px-3.5 py-1 font-bold text-xl">-</button>
-                                <input id=${ss}-inp disabled type="number" min="1" class="text-xl font-semibold w-12 py-1.5text-center bg-primary   " value=1>
+                                <input id=${ss}-inp disabled type="number" min="1" class="text-xl font-semibold w-12 py-1.5 text-center bg-primary   " value=1>
                                 <button data-idm=${ss} data-hg=${hg} onclick='tmbhval(this);' class="submit bg-fill text-primary rounded-md px-3 py-1 font-bold text-xl">+</button>
                             </div>
                         </div>
                     </div>
-                </div>`);
+                </div>
+                        `);
+
 
                 let cobustr = '';
                 for(let i=0;i<lstm.length;i++)
                 {
-                    cobustr = `                <div class="flex gap-4 w-full p-4 h-28 bg-primary rounded-lg ${lstidm[i]}">
+                    cobustr = `<div class="flex gap-4 w-full p-4 h-28 bg-primary rounded-lg ${lstidm[i]}">
                     <div class="h-full w-full flex justify-between items-center">
                         <div class="w-full h-full flex items-center justify-start gap-3">
                             <div>
@@ -141,8 +141,8 @@
                         <div>
                             <div class="flex items-center gap-3">
                                 <button data-idm=${lstidm[i]} data-hg=${lsthg[i]} onclick='krval(this);' class="submit bg-fill text-primary rounded-lg px-3.5 py-1 font-bold text-xl">-</button>
-                                <input id=${ss}-inp disabled type="number" min="1" class="text-xl font-semibold w-12 py-1.5 text-center bg-primary" value=1>
-                                <button  data-idm=${lstidm[i]} data-hg=${lsthg[i]} onclick='tmbhval(this);' class="submit bg-fill text-primary rounded-md px-3 py-1 font-bold text-xl">+</button>
+                                <input id=${lstidm[i]}-inp disabled type="number" min="1" class="text-xl font-semibold w-12 py-1.5 text-center bg-primary   " value=${lstVal[i]}>
+                                <button data-idm=${lstidm[i]} data-hg=${lsthg[i]} onclick='tmbhval(this);' class="submit bg-fill text-primary rounded-md px-3 py-1 font-bold text-xl">+</button>
                             </div>
                         </div>
                     </div>
@@ -183,7 +183,8 @@
             let cobustr = '';
             for(let i=0;i<lstm.length;i++)
             {
-                cobustr = `            <div class="flex gap-4 w-full p-4 h-28 bg-primary rounded-lg ${lstidm[i]}">
+                cobustr = `
+                        <div class="flex gap-4 w-full p-4 h-28 bg-primary rounded-lg ${lstidm[i]}">
                     <div class="h-full w-full flex justify-between items-center">
                         <div class="w-full h-full flex items-center justify-start gap-3">
                             <div>
@@ -199,14 +200,17 @@
                         <div>
                             <div class="flex items-center gap-3">
                                 <button data-idm=${lstidm[i]} data-hg=${lsthg[i]} onclick='krval(this);' class="submit bg-fill text-primary rounded-lg px-3.5 py-1 font-bold text-xl">-</button>
-                                <input id=${lstidm[i]}-inp disabled type="number" min="1" class="text-xl font-semibold w-12 py-1.5 text-center bg-primary" value=${lstVal[i]}>
-                                <button  data-idm=${lstidm[i]} data-hg=${lsthg[i]} onclick='tmbhval(this);' class="submit bg-fill text-primary rounded-md px-3 py-1 font-bold text-xl">+</button>
+                                <input id=${lstidm[i]}-inp disabled type="number" min="1" class="text-xl font-semibold w-12 py-1.5 text-center bg-primary   " value=${lstVal[i]}>
+                                <button data-idm=${lstidm[i]} data-hg=${lsthg[i]} onclick='tmbhval(this);' class="submit bg-fill text-primary rounded-md px-3 py-1 font-bold text-xl">+</button>
                             </div>
                         </div>
                     </div>
-                </div>`+cobustr ;   
+                </div>
+                        `
+                        
+                        
+                        +cobustr ;   
             }
-
             // console.log(cobustr);
             lm.innerHTML = cobustr;
             
@@ -250,6 +254,7 @@
             
 
         }
+        /* --------------------- END FUNGSI TAMBAH DAN KURANG VALUE MENU  --------------------- */
 
 
 

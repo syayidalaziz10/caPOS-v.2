@@ -278,8 +278,17 @@ class PemesananController extends Controller
                 'id_pemesanan' => $pemesanan->id_pemesanan,
                 'id_menu' => "" . $row[$i],
                 'jumlah' => $raw[$i],
+
             ]);
             $detailPemesanan->save();
+
+            $menu = Menu::find($row[$i]);
+
+            if ($menu) {
+                // Subtract the quantity from the stock
+                $menu->stok -= $raw[$i];
+                $menu->save();
+            }
         }
         return redirect()->route('kasir.detail', ['pemesanan' => $pemesanan->id_pemesanan])->with('success', 'Success Creating pemesanan');
     }
