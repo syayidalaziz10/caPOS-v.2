@@ -61,6 +61,7 @@ class UserController extends Controller
         $data = [
             'title' => "Data Kasir",
             'page'  => "kasir",
+            'cari' => $cari
         ];
 
         $data['menu']  = Menu::when($cari, function ($query, $cari) {
