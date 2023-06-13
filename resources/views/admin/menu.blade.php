@@ -148,9 +148,9 @@
 
 {{-- modal edit produk --}}
 <div id="staticModalEdit" data-modal-backdrop="static" tabindex="-1" aria-label="hidden" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 p-4 w-full md:inset-0 h-modal md:h-full">
-    <form action="{{ route('menu.update') }}" id="formSbm" method="POST" enctype="multipart/form-data" class="relative w-full max-w-lg h-full md:h-auto">
+    <form action="{{ route('menu.update') }}"  method="POST" enctype="multipart/form-data" class="relative w-full max-w-lg h-full md:h-auto">
         @csrf
-        @method('PUT')
+        {{-- @method('PUT') --}}
         <!-- Modal content -->
         <div class="relative rounded-xl shadow bg-content">
             <!-- Modal header -->
@@ -230,7 +230,7 @@
     let stokObj  = document.getElementById('stokEdit');
     let gambarObj      = document.getElementById('gambarEdit');
     let gambarSObj     = document.getElementById('gambarSedit');
-    let formSbm        = document.getElementById('formSbm');
+    // let formSbm        = document.getElementById('formSbm');
 
     function edtMdl(obj)
     {
@@ -243,7 +243,7 @@
         const stok = obj.getAttribute("data-stok");
         const gambar     = obj.getAttribute("data-gambar");
         const gambarS    = obj.getAttribute("data-gambarSkg");
-        formSbm.action   = "http://localhost:8000/menu/"+String(idMenu);
+        // formSbm.action   = "http://localhost:8000/admin/menu/"+String(idMenu);
 
 
         idMenuObj.value = idMenu;
